@@ -58,4 +58,24 @@ Feature: To test the Eligibility criteria section for the Grant Application proc
           |SectorName|grantoption|overseasoption|questionone|questiontwo|questionthree|question4|question5|
           |IT|1|1|Yes|Yes|Yes|Yes|Yes|
 
+  Scenario Outline: To check User is able to fill in the Eligibility section with possible values both Yes No
+    When User navigates to the Business grant portal login page
+    Then User logins the application with valid username and password
+    Then User clicks on option Get New Grant
+    And User selects the section as <SectorName>
+    When User is navigated to select grant type page as <grantoption>
+    When User is navigated to apply for grant page <overseasoption>
+    Then User selects the functional area as <Functional Area>
+    And User clicks on the apply button
+    Then User is navigated to Grant Actions Page and scroll down to click proceed
+    Then User default is on Eligibility section
+    And User fills in the Eligibity section questionone as <questionone>
+    And User fills in the Eligibity section questiontwo as <questiontwo>
+    And User fills in the Eligibity section questionthree as <questionthree>
+    And User fills in the Eligibity section questionfour as <question4>
+    And User fills in the Eligibity section questionfive as <question5>
+    Then User clicks on Next button on eligibility section
+    Examples:
+      |SectorName|grantoption|overseasoption|questionone|questiontwo|questionthree|question4|question5|
+      |IT|1|1|Yes|Yes|Yes|No|Yes|
 

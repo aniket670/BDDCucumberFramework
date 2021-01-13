@@ -10,15 +10,13 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
-
     Logger log = (Logger) LoggerFactory.getLogger(DriverFactory.class);
     PropLocation file = new PropLocation();
     ReadProperties loc = new ReadProperties(file.location());
     private WebDriver driver ;
-    private  static DriverFactory myobj = null;
+    private static DriverFactory myobj = null;
 
     //This is our DriverFactory Class where the control of Test starts with
-
     //We have defined the constructor as Private so that the class cannot be instantiated in other class.
     //At the same time  we are instantiating its object by the getDriver method
     // We have implemented the OOPS based designed pattern Singleton Design Pattern

@@ -11,7 +11,7 @@ import cucumber.api.java.en.When;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class StepDefinitionEligibilityCheck {
+public class StepDefinitionEligibilityCheck  {
 
    Logger logger = (Logger) LoggerFactory.getLogger(LoginPage.class);
     LoginPage loginPage = new LoginPage();
@@ -27,6 +27,7 @@ public class StepDefinitionEligibilityCheck {
             Reporter.addScenarioLog("The User navigation is completed");
         } catch (InterruptedException e) {
             loginPage.takeScreenShotwithEx(Thread.currentThread().getStackTrace()[1].getMethodName(), e);
+            //loginPage.addScreenCaptureFromPath
         }
     }
 
